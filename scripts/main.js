@@ -59,6 +59,7 @@ function setupEspecialidad(id) {
   }
 }
 
+
 // --- COPIAR AL FINAL DE MAIN.JS ---
 
 // document.addEventListener('click', (event) => {
