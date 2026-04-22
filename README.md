@@ -1,30 +1,55 @@
 # NutraAdvance US
 
-## Plaaforma de Gestión para Especialistas Médicos
+## Plataforma de Gestión para Especialistas Médicos
 
 ### Professional Project Proposal
 
-NutraAdvance US es una plataforma digital diseñada para optimizar la interaccion entre el importador de suplementos y los especialistas de Salud.
+**NutraAdvance US** es una plataforma digital diseñada para optimizar la interacción entre el importador de suplementos y los especialistas de salud. El objetivo principal es brindar una herramienta técnica y visual que facilite la toma de decisiones clínicas basada en la calidad de los componentes.
 
-- **Trello Board:**
+---
 
 ### Key Features
 
-- **Comparativa Técnica Avanzada:** Herramienta visual para contrastar productos locales vs. fórmulas de USA
+- **Comparativa Técnica Avanzada:** Herramienta visual diseñada para contrastar productos locales (Lima) vs. fórmulas avanzadas de USA.
+- **Enfoque en Biodisponibilidad:** Resaltado de componentes críticos como **Vitamina D3** y **Minerales Aminoquelados** para garantizar una mejor absorción.
+- **Interfaz Médica Moderna:** Uso de **Glassmorphism** y animaciones de "Blobs" para una experiencia visual limpia, profesional y de alta tecnología.
+- **Optimización Logística:** Acceso directo a coordinación de stock para asegurar la disponibilidad en consultorios médicos.
 
-- **Enfoque en Biodisponibilidad:** Resaltado de componentes clave como la Vitamina D3 y Minerales Aminoquelados para mejorar la absorción.
-- **Acceso Personalizado por Especialidad:** Landing pages exclusivas diseñadas con una interfaz moderna (Glassmorphism) para cada tipo de doctor.
-- **Optimización Logística:** Canal directo de pedido vía WhatsApp para asegurar el stock en consultorios.
+---
 
 ### Technical Stack
 
-- **Tooling:** Vite, ESLint, Prettier.
-- **Languages:** HTML5, CSS3 (Modern layout con Animaciones de Manchas/Blobs), JavaScript (ES Modules).
-- **Architecture:** Estructura profesional basada en la separación de intereses (Carpeta /src para desarrollo y /dist para producción).
+- **Languages:** HTML5 (Semántico), CSS3 (Custom Properties & Flexbox/Grid), JavaScript (Vanilla JS).
+- **Design Trends:** Glassmorphism, Soft UI, Animaciones de Manchas (Blobs).
+- **Architecture:** Estructura modular simplificada para una carga rápida y alta portabilidad.
 
-### Common Workflow Commands
+---
 
-- `npm run start` - Inicia el servidor de desarrollo local (Vite).
-- `npm run build` - Generates the production-ready files in /dist (Optimizado para el cliente final).
-- `npm run format` - Formatea el código automáticamente usando Prettier para mantener la limpieza.
-- `npm run lint` - Ejecuta ESLint para asegurar la calidad y estándares del código.
+### Project Structure
+
+```text
+NutraAdvance/
+│
+├── includes/
+│   ├── header.html        # Estructura de navegación superior
+│   ├── footer.html        # Información de contacto y legal
+│   └── main.html    # Sección de tablas comparativas
+│
+├── images/
+│   ├── logos/             # Branding de NutraAdvance US
+│   └── products/          # Fotos de productos (Lima vs USA)
+│
+├── scripts/
+│   ├── main.js            # Lógica de interacción y animaciones
+│   └── comparison.js      # Datos y filtros de productos
+│
+├── styles/
+│   ├── style.css          # Estilos globales y variables
+│   └── glassmorphism.css  # Efectos visuales específicos
+│
+└── index.html             # Punto de entrada principal (Root)
+└── .editorconfig
+└── .gitignore
+└── README.md
+
+```

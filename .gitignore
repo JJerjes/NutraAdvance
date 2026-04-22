@@ -1,15 +1,28 @@
+# --- System Files ---
 .DS_Store
-.cache
-.vscode
 Thumbs.db
 desktop.ini
-.log
+
+# --- Editor & Temp Files ---
+.vscode/
+.cache/
 .tmp
 .bak
 .swp
-node_modules
-web_modules
-dist
-build
+*.sw?
+
+# --- Logs ---
+*.log
+npm-debug.log*
+
+# --- Web & Build (Just in case) ---
+node_modules/
+web_modules/
+dist/
+build/
+
+# --- Security (CRITICAL) ---
 .env
 .env.local
+.env.development
+.env.production
