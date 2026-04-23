@@ -19,7 +19,6 @@ async function loadComponent(id, path) {
   }
 }
 
-// Carga inicial de la estructura (Fundamental para que no se vea vacío)
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header-placeholder", "includes/header.html");
   loadComponent("main-placeholder", "includes/main.html");
@@ -58,39 +57,3 @@ function setupEspecialidad(id) {
       `).join('');
   }
 }
-
-
-// --- COPIAR AL FINAL DE MAIN.JS ---
-
-// document.addEventListener('click', (event) => {
-//     // Detectar clic en el botón de producto
-//     const btn = event.target.closest('.prod-btn');
-    
-//     if (btn) {
-//         const prodId = btn.dataset.prodId;
-//         // Buscamos los datos en el objeto de ginecología
-//         const producto = especialidadesData.ginecologia.productos.find(p => p.id === prodId);
-        
-//         if (producto) {
-//             const container = document.getElementById('comparison-table-container');
-//             container.classList.remove('hidden'); // Mostramos la tabla
-            
-//             // Inyectamos la estructura de 3 columnas
-//             container.innerHTML = `
-//                 <div class="comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 20px;">
-//                     <div style="font-weight: bold; border-bottom: 2px solid blue;">${producto.peru.nombreProd}</div>
-//                     <div style="font-weight: bold; border-bottom: 2px solid blue;">${producto.usa1.nombreProd}</div>
-//                     <div style="font-weight: bold; border-bottom: 2px solid blue;">${producto.usa2.nombreProd}</div>
-                    
-//                     <div><img src="${producto.peru.foto}" width="80"></div>
-//                     <div><img src="${producto.usa1.foto}" width="80"></div>
-//                     <div><img src="${producto.usa2.foto}" width="80"></div>
-
-//                     <div style="font-size: 0.9rem;">${producto.peru.beneficios}</div>
-//                     <div style="font-size: 0.9rem;">${producto.usa1.beneficios}</div>
-//                     <div style="font-size: 0.9rem;">${producto.usa2.beneficios}</div>
-//                 </div>
-//             `;
-//         }
-//     }
-// });
