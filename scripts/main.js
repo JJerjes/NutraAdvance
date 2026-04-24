@@ -10,10 +10,8 @@ async function loadComponent(id, path) {
     
     const html = await response.text();
     element.innerHTML = html;
+    return true;
 
-    if (path.includes('especialidades.html')) {
-      return true;
-    }
   } catch (error) {
     console.error("Error cargando el componente:", error);
   }
@@ -39,6 +37,27 @@ document.addEventListener('click', async (event) => {
   if (backBtn) {
     loadComponent('main-placeholder', 'includes/main.html');
   }
+
+  const prodBtn = target.closest('.prod-btn');
+  if (prodBtn) {
+  const prodId = prodBtn.dataset.prodId;
+  const producto = especialidadesData.ginecologia.productos.find(p => p.id === prodId);
+  
+  if (producto) {
+    await loadComponent('main-placeholder', 'includes/comparativa.html');
+    renderComparison(producto);
+  }
+  }
+  
+  const backToList = target.closest('.back-to-list');
+
+  if (backToList) {
+    await loadComponent('main-placeholder', 'includes/especialidades.html');
+    setupEspecialidad('ginecologia');
+  }
+
+
+
 })
 
 function setupEspecialidad(id) {
@@ -57,3 +76,41 @@ function setupEspecialidad(id) {
       `).join('');
   }
 }
+
+function renderComparison(producto) {
+  document.getElementById('name-peru').innerHTML = producto.peru.nombreProd;
+  document.getElementById('name-usa-1').innerHTML = producto.usa1.nombreProd;
+  document.getElementById('name-usa-2').innerHTML = producto.usa2.nombreProd;
+
+  document.getElementById('img-peru').src = producto.peru.foto;
+  document.getElementById('img-usa-1').src = producto.usa1.foto;
+  document.getElementById('img-usa-2').src = producto.usa2.foto;
+
+  document.getElementById('ficha-peru').innerHTML = producto.peru.ficha;
+  document.getElementById('ficha-usa-1').innerHTML = producto.usa1.ficha;
+  document.getElementById('ficha-usa-2').innerHTML = producto.usa2.ficha;
+
+  const updateTabContent = (key) => {
+    document.getElementById('dyn-peru').innerHTML = producto.peru[key];
+    document.getElementById('dyn-usa-1').innerHTML = producto.usa1[key];
+    document.getElementById('dyn-usa-2').innerHTML = producto.usa2[key];
+  };
+
+  updateTabContent('beneficios');
+
+  const buttons = document.querySelectorAll('.tab-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const key = btn.getAttribute('data-content');
+      updateTabContent(key);
+    });
+  });
+}
+
+
+
+
+

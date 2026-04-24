@@ -37,7 +37,7 @@ NutraAdvance/
 │
 ├── images/
 │   ├── logos/             # Branding de NutraAdvance US
-│   └── products/          # Fotos de productos (Lima vs USA)
+│   └── products/ginecologia/sorbamin.webp (Fotos de productos Lima vs USA)
 │
 ├── scripts/
 │   ├── main.js            # Lógica de interacción y animaciones
