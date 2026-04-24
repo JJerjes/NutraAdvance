@@ -389,7 +389,9 @@ footer {
   background: var(--white);
   /* Cambiado a blanco para que no afecte a toda la tabla */
   margin-top: 25px;
-
+  overflow-x: auto;
+  display: block;
+  width: 100%;
   /* ESTILOS PARA LA FILA DE NOMBRES */
   .header-row {
     background-color: var(--primary-blue);
@@ -504,6 +506,13 @@ footer {
 }
 
 
+/* Esto aplica para MÓVIL (desde 350px en adelante) */
+.comparison-board .comp-row, 
+.comparison-board .dynamic-content-row,
+.comparison-board .header-row {
+  display: grid;
+  /* Usa pixeles fijos aquí para que el cuadro mantenga su forma y obligue al scroll */
+  grid-template-columns: repeat(3, 100px); 
+}
 
-
-
+/* Solo cuando la pantalla sea grande, permitimos que se estiren */

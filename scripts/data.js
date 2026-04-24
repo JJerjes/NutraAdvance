@@ -15,7 +15,7 @@ export const especialidadesData = {
         },
         usa1: {
           nombreProd: "Klean Hydration (USA)",
-          foto: "images/products/ginecologia/klean-Hydration.avif",
+          foto: "images/products/ginecologia/klean-hydration.avif",
           ficha: "L-Glutamina + Minerales Quelados (Citrato)",
           calidad: "<ul><li>Soporte de L-Glutamina para recuperación de la mucosa y balance de nitrógeno.</li><li>SUPERIORIDAD TÉCNICA: Aporta Calcio, Magnesio y Zinc en formas queladas (citratos) para máxima biodisponibilidad, ausentes en la fórmula local.</li><li>Certificación NSF Certified for Sport: Garantiza que la etiqueta es 100% real y libre de contaminantes.</li></ul>",
           experiencia: "<ul><li>Sabor: Naranja Natural.</li><li>Uso: Oral (1 scoop). Elimina el riesgo de infecciones por vía parenteral y mejora la adherencia del paciente.</li></ul>",
