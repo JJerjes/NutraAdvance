@@ -223,7 +223,6 @@ main {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -235,7 +234,6 @@ main {
     opacity: 0;
     transform: translateY(-30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -387,103 +385,110 @@ footer {
 
 .comparison-board {
   background: var(--white);
-  /* Cambiado a blanco para que no afecte a toda la tabla */
   margin-top: 25px;
-  overflow-x: auto;
+  overflow-x: hidden;
   display: block;
   width: 100%;
-  /* ESTILOS PARA LA FILA DE NOMBRES */
+  border: 1px solid #000;
+
+  /* Estructura para MÓVIL (Forzar líneas alineadas) */
+  .header-row, 
+  .comp-row, 
+  .dynamic-content-row,
+  .photo-row {
+    display: grid;
+    /* Usamos 180px para que las fotos se vean grandes y las líneas no se descuadren */
+    grid-template-columns: repeat(3, 1fr); 
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+
   .header-row {
     background-color: var(--primary-blue);
-    /* Fondo azul para los nombres */
-
     .comp-col {
       color: var(--white);
-      /* Texto blanco */
       font-weight: 800;
-      /* Negrita */
-      font-size: 1.1rem;
-      padding: 15px 5px;
+      font-size: 0.65rem;
+      padding: 10px 2px;
       text-transform: uppercase;
+      line-height: 1.2;
     }
   }
 
-  .comp-row {
-    display: grid;
-    border: 1px solid black;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-bottom: 1px solid #000;
+  /* Celdas Generales */
+  .comp-col {
+    padding: 8px 4px;
+    border-right: 1px solid  #000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
 
-    .comp-col {
-      padding: 20px;
-      border-right: 1px solid #000;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-
-      &:last-child {
-        border-right: none;
-      }
+    &:last-child {
+      border-right: none;
     }
   }
 
+  /* Fila de Fotos: Para que no se descuadren los cuadros */
+  .photo-row .comp-col {
+    height: 120px; /* Altura fija para que la línea de abajo sea recta */
+    padding: 5px;
+
+    .img-fluid {
+      max-width: 90%; 
+      max-height: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  /* Fila de Contenido Dinámico: Alineación a la izquierda (star) */
   .dynamic-content-row {
     background-color: #f9f9f9;
-    min-height: 150px;
-    transition: all 0.3s ease;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    
     .comp-col {
-      padding: 25px;
-      line-height: 1.6;
-      font-size: 1rem;
-      color: #333;
-      text-align: center;
-      display: flex;
+      padding: 15px 8px;
       flex-direction: column;
-      justify-content: flex-start;
-      border-right: 1px solid #000;
-
-      &:last-child {
-        border-right: none;
-      }
+      justify-content: flex-start; /* Inicio vertical */
+      align-items: flex-start;    /* Inicio horizontal (star) */
+      text-align: left;           /* Texto a la izquierda */
 
       ul {
         margin: 0;
-        padding-left: 20px;
+        padding-left: 12px;
         list-style-type: disc;
+        width: 100%;
 
         li {
-          margin-bottom: 8px;
-          font-size: 0.9rem;
-          line-height: 1.4;
-          color: #444;
+          margin-bottom: 6px;
+          font-size: 0.68rem;
+          line-height: 1.3;
+          color: #333;
         }
       }
     }
   }
 
+  /* Pestañas interactivas */
   .interactive-tabs-bar {
     display: flex;
-    margin-top: 40px;
-    border: 1px solid var(--dark-grey);
+    margin-top: 20px;
     background-color: #f0f0f0;
-    border-bottom: 1px solid #000;
+    border: 1px solid #000;
+    width: 100%; /* 180px * 3 */
 
     .tab-btn {
       flex: 1;
-      padding: 15px;
+      padding: 10px 2px;
       border: none;
       background: none;
       border-right: 1px solid #000;
       font-weight: 800;
+      font-size: 0.65rem;
       color: var(--primary-blue);
       cursor: pointer;
-      transition: all 0.3s;
-
+    
       &:last-child {
         border-right: none;
       }
@@ -493,26 +498,41 @@ footer {
         color: var(--white);
       }
 
-      &:hover:not(.active) {
+      /* &:hover:not(.active) {
         background-color: #e0e0e0;
-      }
+      } */
     }
   }
+}
 
-  .photo-row .img-fluid {
-    max-width: 120px;
-    height: auto;
+/* RESPONSIVE: Pantallas Grandes (Tablets y PC) */
+@media (min-width: 768px) {
+  .comparison-board {
+    .header-row .comp-col {
+      font-size: 1.1rem;
+      padding: 15px;
+    }
+
+    .comp-col {
+      font-size: 0.95rem;
+      padding: 20px;
+    }
+
+    .photo-row .comp-col {
+      height: 200px;
+
+      .img-fluid {
+        max-height: 160px;
+      }
+    }
+
+    .dynamic-content-row .comp-col ul li {
+      font-size: 0.9rem;
+    }
+
+    .interactive-tabs-bar .tab-btn {
+      font-size: 0.9rem;
+      padding: 15px;
+    }
   }
 }
-
-
-/* Esto aplica para MÓVIL (desde 350px en adelante) */
-.comparison-board .comp-row, 
-.comparison-board .dynamic-content-row,
-.comparison-board .header-row {
-  display: grid;
-  /* Usa pixeles fijos aquí para que el cuadro mantenga su forma y obligue al scroll */
-  grid-template-columns: repeat(3, 100px); 
-}
-
-/* Solo cuando la pantalla sea grande, permitimos que se estiren */
