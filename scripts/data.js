@@ -43,7 +43,7 @@ export const especialidadesData = {
         },
         usa1: {
           nombreProd: "Isopure Zero Carb (Pote Gris - USA)",
-          foto: "images/products/ginecologia/isopure.webp", // (Renombra tu imagen a este nombre)
+          foto: "images/products/ginecologia/isopure.webp", 
           ficha: "100% Whey Protein Isolate (Aislado de Suero)",
           ficha: "100% Whey Protein Isolate (Aislado de Suero)",
           calidad: "<ul><li>SUPERIORIDAD TÉCNICA: La proteína aislada más pura del mercado, sin carbohidratos ni azúcar.</li><li>Garantía: Producto 100% importado de EE. UU. en su empaque original de fábrica (Pote Gris).</li><li>Certificación: Nature's Best USA con estándares de pureza máxima.</li></ul>",
@@ -61,10 +61,31 @@ export const especialidadesData = {
       },
       {
         id: "endovit",
-        nombre: "ENDOVIT", // Tercer botón
-        peru: { nombreProd: "ENDOVIT", /* otros datos */ },
-        usa1: { /* datos */ },
-        usa2: { /* datos */ }
+        nombre: "ENDOVIT", 
+        peru: { 
+          nombreProd: "ENDOVIT 5% (Local)",
+          foto: "images/products/ginecologia/endovit.png",
+          ficha: "Solución Multivitamínica Inyectable (Endovenosa)",
+          calidad: "<ul><li>MÉTODO INVASIVO: Administración vía endovenosa (suero). Requiere canalizar al paciente con agujas.</li><li>PROCESO LENTO: La infusión de 1 litro suele durar hasta 12 horas conectado a un soporte.</li><li>LIMITACIÓN: Solo aporta vitaminas y minerales; carece de la carga proteica necesaria para recuperar músculo.</li></ul>",
+          experiencia: "<ul><li>Uso: Hospitalario o domiciliario con enfermería. Incomodidad por restricción de movimiento durante la aplicación.</li></ul>",
+          compra: "<ul><li>Costo: S/ 45.00 - S/ 55.00 por dosis.</li><li>Riesgo: Mayor probabilidad de infección o hematomas por la manipulación de vías.</li></ul>"
+        },
+        usa1: {
+          nombreProd: "Ensure Compact (Concentrado USA)",
+          foto: "images/products/ginecologia/compact.png",
+          ficha: "Nutrición Médica de Alta Densidad",
+          calidad: "<ul><li>MICRO-VOLUMEN: 300 calorías y 13g de proteína en solo 125ml. Nutrición completa sin necesidad de agujas ni sueros.</li><li>ABSORCIÓN EFICIENTE: Diseñado para pacientes inapetentes que no toleran volúmenes altos.</li><li>CALIDAD USA: Fabricación Abbott USA con estándares de pureza clínica superior.</li></ul>",
+          experiencia: "<ul><li>Sabor: Vainilla Intensa / Café Latte.</li><li>Uso: Listo para beber. El paciente mantiene su total autonomía y movilidad.</li></ul>",
+          compra: "<ul><li>COSTO UNITARIO: S/ 20.00.</li><li>PROMO MENSUAL: S/ 510.00 (30 unidades - S/ 17.00 c/u).</li><li>Diferencial: Sustituye la necesidad de vías inyectables si el paciente puede ingerir líquidos.</li></ul>"
+        },
+        usa2: {
+          nombreProd: "Glucerna Hunger Smart (USA)",
+          foto: "images/products/ginecologia/glucerna.jpg",
+          ficha: "Control Metabólico Avanzado",
+          calidad: "<ul><li>MÁXIMA PROTEÍNA: 15g de proteína de alta calidad para evitar la pérdida de masa muscular, algo que el Endovit (0g proteína) no ofrece.</li><li>CARBSTEADY: Tecnología de carbohidratos de liberación lenta que mantiene la energía estable sin picos de azúcar.</li><li>NUTRICIÓN INTEGRAL: Incluye fibra y 25 vitaminas esenciales, siendo un sustituto de comida completo, no solo un suplemento.</li></ul>",
+          experiencia: "<ul><li>SABORES PREMIUM: Chocolate Rich, Vainilla y Fresa.</li><li>CERO AGUJAS: Se bebe directamente, permitiendo que el paciente se recupere en casa con total comodidad.</li></ul>",
+          compra: "<ul><li>COSTO UNITARIO: S/ 22.00.</li><li>PROMO MENSUAL: S/ 540.00 (30 unidades - S/ 18.00 c/u).</li><li>VENTAJA: Ahorro masivo comparado con el costo de hospitalización o enfermería para poner sueros.</li></ul>"
+        }
       }
     ]
   }
